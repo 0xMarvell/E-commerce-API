@@ -21,7 +21,7 @@ class Books(models.Model):
     created_on = models.DateField(auto_now_add=True)
 
     class Meta:
-        ordering = '-created_on'
+        ordering = ['-created_on']
 
     def __str__(self):
         return self.title
@@ -38,7 +38,7 @@ class Headphones(models.Model):
     created_on = models.DateField(auto_now_add=True)
 
     class Meta:
-        ordering = '-created_on'
+        ordering = ['-created_on']
 
     def __str__(self):
         return f'{self.product_tag} {self.name}'
