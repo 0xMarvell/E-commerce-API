@@ -4,6 +4,9 @@ from django.core.validators import MaxLengthValidator, MinLengthValidator
 class Category(models.Model):
     title = models.CharField(max_length=150)
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         return self.title
 
@@ -22,6 +25,7 @@ class Books(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+        verbose_name_plural = 'Books'
 
     def __str__(self):
         return self.title
@@ -39,6 +43,7 @@ class Headphones(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+        verbose_name_plural = 'Headphones'
 
     def __str__(self):
         return f'{self.product_tag} {self.name}'
