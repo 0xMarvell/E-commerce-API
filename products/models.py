@@ -14,6 +14,7 @@ class Category(models.Model):
 class Books(models.Model):
     title = models.CharField(max_length=500)
     category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
+    author = models.CharField(max_length=250)
     isbn = models.PositiveIntegerField(validators=[MinLengthValidator(13), MaxLengthValidator(13)])
     pages = models.IntegerField()
     price = models.IntegerField()
